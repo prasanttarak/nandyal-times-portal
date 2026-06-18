@@ -317,3 +317,5 @@ db.serialize(() => {
       }); // directory
     }); // news
   }); // users
+
+}); // closes db.serialize
