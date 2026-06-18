@@ -40,7 +40,7 @@ app.use(session({
 }));
 
 // Serve static assets
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname));
 app.use('/uploads', express.static(uploadsDir));
 
 // Password Hashing Helper
