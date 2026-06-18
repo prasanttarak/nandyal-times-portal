@@ -183,9 +183,57 @@
       }
       .dashboard-container {
         grid-template-columns: 1fr;
+        min-height: calc(100vh - 64px);
       }
       .dashboard-sidebar {
-        display: none; /* Simplified dynamic menu toggle on mobile is standard, here we just stack */
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 16px;
+        overflow-x: auto;
+        height: auto;
+        min-height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--card-border);
+        background: #18181b;
+        position: sticky;
+        top: 64px;
+        z-index: 90;
+      }
+      .sidebar-nav {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+      .sidebar-nav::-webkit-scrollbar {
+        height: 4px;
+      }
+      .sidebar-nav::-webkit-scrollbar-thumb {
+        background: var(--crimson);
+        border-radius: 2px;
+      }
+      .sidebar-link {
+        padding: 8px 12px;
+        font-size: 13px;
+        white-space: nowrap;
+        border-radius: var(--radius-md);
+      }
+      .sidebar-link.active {
+        border-left: none;
+        border-bottom: 3px solid var(--crimson);
+        background: rgba(225, 29, 72, 0.08);
+        border-radius: var(--radius-md) var(--radius-md) 0 0;
+        padding-left: 12px;
+      }
+      .dashboard-sidebar > div:last-child {
+        display: none;
+      }
+      .dashboard-content {
+        padding: 16px;
       }
     }
     
