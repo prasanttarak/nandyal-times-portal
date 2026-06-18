@@ -7,6 +7,7 @@ const path = require('path');
 const fs = require('fs');
 const crypto = require('crypto');
 const multer = require('multer');
+const SQLiteStore = require('connect-sqlite3')(session);
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -33,9 +34,10 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({
+  store: new SQLiteStore({ db: 'sessions.db', dir: __dirname }),
   secret: 'nandyal-times-community-secret-98765',
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false,
   cookie: { maxAge: 24 * 60 * 60 * 1000 } // 1 day session
 }));
 
