@@ -1759,3 +1759,85 @@ body {
   }
 }
 
+/* ==========================================================================
+   MOBILE RESPONSIVENESS FIXES (PREVENT AUTO ZOOM-OUT)
+   ========================================================================== */
+
+@media (max-width: 600px) {
+  /* Prevent Header buttons from overflowing the navbar */
+  .nav-container {
+    padding: 0 16px;
+  }
+  
+  .logo {
+    font-size: 20px; /* Scale logo down slightly */
+  }
+  
+  /* Hide the outline button (Join as Reporter) in mobile header to save space */
+  .nav-actions button.btn-outline,
+  .nav-actions .btn-outline {
+    display: none !important;
+  }
+  
+  /* Compact 'Submit Tip' button on mobile - show only icon */
+  .nav-actions button.btn-primary {
+    font-size: 0 !important; /* Hide text node child */
+    padding: 8px !important;
+    width: 36px;
+    height: 36px;
+    border-radius: 50% !important; /* Make round */
+    justify-content: center;
+    box-shadow: none;
+  }
+  
+  .nav-actions button.btn-primary i {
+    font-size: 14px !important; /* Keep icon visible */
+    margin: 0 !important;
+  }
+  
+  .nav-actions {
+    gap: 8px; /* Reduce gap on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Adjust News ticker for small screens */
+  .news-ticker-container {
+    font-size: 11px;
+    height: 34px;
+  }
+  .ticker-label {
+    padding: 0 10px;
+    font-size: 11px;
+  }
+  .main-header {
+    top: 34px;
+  }
+  .page-layout {
+    padding-top: 110px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  /* Make floating buttons more compact on small screens */
+  .floating-whatsapp {
+    width: 46px;
+    height: 46px;
+    font-size: 22px;
+  }
+  .floating-whatsapp-container {
+    bottom: 16px;
+    right: 16px;
+  }
+  .floating-whatsapp-tooltip {
+    display: none !important; /* Hide tooltip on small screens */
+  }
+  
+  .floating-translator {
+    width: 130px;
+    bottom: 16px;
+    left: 16px;
+    padding: 6px 10px;
+  }
+}
+
